@@ -80,8 +80,8 @@ date: 2024-01-01
 > 品牌齊全，貨源充足。需要訂購合作請添加好友聯繫，謝謝！🙏
 > <small>Complete brand range, sufficient stock. Please contact us for orders and cooperation! 🙏</small>
 >
-> *   **電話 (Phone)**：+86 188 2739 3199
-> *   **郵件 (Email)**：mesonglin@gmail.com
+> *   **電話 (Phone)**：<strong style="color: red;">+86 188 2739 3199</strong>
+> *   **郵件 (Email)**：<strong style="color: red;">mesonglin@gmail.com</strong>
 > *   **地址 (Address)**：China (Shipping to Taiwan, SE Asia, India)
 
 {{< contact-channels >}}
