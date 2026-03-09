@@ -1,0 +1,5 @@
+<div class="price-display my-4">
+    <span class="original-price text-base-content/60 text-lg mr-2" style="text-decoration: line-through;">原價 {{
+        .Page.Params.original_price | default 10 }} 美元</span>
+    <span class="special-price text-2xl font-bold" style="color: red;">特價 {{ .Page.Params.price | default 5 }} 美元</span>
+</div>

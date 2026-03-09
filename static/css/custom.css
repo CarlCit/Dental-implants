@@ -1,0 +1,147 @@
+/* Robust Mobile-First Layout Fix */
+
+/* Use CSS Grid to handle the layout of Nav + Main Content */
+body {
+  display: grid !important;
+  grid-template-rows: min-content 1fr !important;
+  height: 100dvh !important;
+  /* Use dynamic viewport height for mobile bars */
+  min-height: -webkit-fill-available;
+  /* iOS fix */
+  overflow: hidden !important;
+  /* Prevent body scroll */
+  margin: 0 !important;
+}
+
+/* Reduce top whitespace */
+main,
+header,
+.container {
+  margin-top: 0 !important;
+  padding-top: 0.5rem !important;
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+header {
+  margin-bottom: 0px !important;
+}
+
+nav {
+  /* Prevent nav from collapsing */
+  flex-shrink: 0;
+}
+
+/* Reset the flip container to fill the remaining grid space */
+.flip-container {
+  height: 100% !important;
+  width: 100% !important;
+  position: relative !important;
+  perspective: 1000px;
+}
+
+.flipper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+/* Make the front/back faces the scroll containers */
+.front,
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100% !important;
+  overflow-y: auto !important;
+  /* Enable vertical scrolling */
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  /* Momentum scrolling on iOS */
+  backface-visibility: hidden;
+  overscroll-behavior-y: contain;
+  /* Prevent body bounce */
+}
+
+/* Ensure 3D rotation works and visibility is managed */
+.front {
+  transform: rotateY(0deg);
+  z-index: 2;
+  visibility: visible;
+}
+
+.back {
+  transform: rotateY(180deg);
+  z-index: 1;
+  visibility: hidden;
+  /* Hide by default to prevent event leakage */
+}
+
+.flip-container.flip-it .flipper {
+  transform: rotateY(180deg);
+}
+
+/* Swap z-index, visibility and handle pointer events when flipped */
+.flip-container.flip-it .front {
+  z-index: 1;
+  pointer-events: none;
+  visibility: hidden;
+  transition: visibility 0s 0.6s;
+  /* Hide after flip finished */
+}
+
+.flip-container.flip-it .back {
+  z-index: 2;
+  pointer-events: auto;
+  visibility: visible;
+}
+
+/* Flex content inside to push footer to bottom and allow expansion */
+.front .container,
+.back .container {
+  min-height: 100%;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  padding-bottom: 0 !important;
+  /* Extra space for footer visibility */
+}
+
+/* Ensure the card inside back takes full width and grows naturally */
+.back .prose {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+/* Fix flip container interaction issues */
+.flip-container .back {
+  pointer-events: none;
+}
+
+.flip-container.flip-it .back {
+  pointer-events: auto;
+}
+
+.flip-container .front {
+  pointer-events: auto;
+}
+
+.flip-container.flip-it .front {
+  pointer-events: none;
+}
+
+/* 設置底部版權文字的字體大小 */
+footer div p:first-child {
+  font-size: 13px !important;
+  color: #282828;
+  font-weight: bold;
+}
+
+/* 適度增加詳情頁文章內容的最大寬度 */
+#dream-single-post-main {
+  max-width: 850px !important;
+  /* 回到較為美觀的寬度限制 */
+}

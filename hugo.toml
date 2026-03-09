@@ -1,0 +1,36 @@
+baseURL = 'https://replace-with-your-github-username.github.io/Dental-implants/'
+languageCode = 'zh-tw'
+defaultContentLanguage = 'zh-tw'
+title = 'Dental Implants 種植牙配件'
+theme = 'dream'
+
+[pagination]
+  pagerSize = 12
+
+[languages.zh-tw]
+  languageName = '繁體中文'
+  contentDir = 'content'
+  weight = 1
+
+[params]
+author = 'Dental Implants'
+avatar = 'img/avatar.png'
+headerTitle = 'Dental Implants 種植牙配件'
+motto = '專業、安全、可靠的植牙配件產品工廠直銷'
+siteStartYear = 2020
+footerBottomText = "<span style='color: #818181ff; font-size: 13px; font-weight: 400;'>🦷 種植牙配件產品工廠直銷 中国大陆发货</span>"
+
+# 主題顏色
+lightTheme = 'emerald'
+darkTheme = 'forest'
+
+# 導航選項
+reorderNavItems = ["about", "search", "posts", "categories", "tags"]
+
+[params.advanced]
+  customCSS = ["css/custom.css"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

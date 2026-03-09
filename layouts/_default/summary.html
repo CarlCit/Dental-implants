@@ -1,0 +1,55 @@
+<a class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30"
+  href="{{ .RelPermalink }}">
+  {{ if .Params.cover }}
+  <figure style="border: 2px solid red; border-radius: inherit; overflow: hidden;">
+    {{ with .Resources.Get .Params.cover }}
+    {{ if eq .MediaType.SubType "svg" }}
+    <img src="{{ .RelPermalink }}" alt="{{ .Title }}" />
+    {{ else }}
+    {{ $webp := .Resize (printf "%dx%d webp" .Width .Height) }}
+    <picture>
+      <source srcset="{{ $webp.RelPermalink }}" type="image/webp" />
+      <img src="{{ .RelPermalink }}" alt="{{ .Title }}" />
+    </picture>
+    {{ end }}
+    {{ else }}
+    <img src="{{ .Params.cover | relURL }}" alt="{{ .Title }}" />
+    {{ end }}
+  </figure>
+  {{ else if not site.Params.noDefaultSummaryCover }}
+  <figure style="border: 2px solid red; border-radius: inherit; overflow: hidden;">
+    {{ with resources.Get (printf "images/default%d.jpg" (index (seq 4 | shuffle) 0)) }}
+    {{ $webp := .Resize (printf "%dx%d webp" .Width .Height) }}
+    <picture>
+      <source srcset="{{ $webp.RelPermalink }}" type="image/webp" />
+      <img src="{{ .RelPermalink }}" alt="{{ .Title }}" />
+    </picture>
+    {{ end }}
+  </figure>
+  {{ end }}
+
+  <div class="card-body">
+    <h2 class="card-title">{{ .Title }}</h2>
+
+    <div class="price-display mt-2">
+      <span class="original-price text-base-content/60 text-sm" style="text-decoration: line-through;">原價 {{
+        .Params.original_price | default 10 }} 美元</span>
+      <span class="special-price text-xl font-bold ml-1" style="color: red;">特價 {{ .Params.price | default 5 }}
+        美元</span>
+    </div>
+
+    {{ or .Description (.Summary | emojify | safeHTML) }}
+
+    {{ $hasAuthor := or .Params.author site.Params.author }}
+    <div class="card-actions justify-between items-center mt-2">
+      {{ if $hasAuthor }}
+      {{ partial "author.html" (dict "Params" .Params "template" "summary") }}
+      {{ end }}
+
+      <div class="flex items-center font-bold" style="color: red;">
+        <ion-icon name="logo-usd" class="mr-1"></ion-icon>
+        <span>特惠價格</span>
+      </div>
+    </div>
+  </div>
+</a>

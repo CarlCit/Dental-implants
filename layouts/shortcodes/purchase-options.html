@@ -1,0 +1,62 @@
+<div class="purchase-options my-8">
+    <h2 class="text-xl font-bold mb-4">🛒 購買渠道 <small class="text-base font-normal ml-2">Purchase Channels</small></h2>
+    <div class="flex flex-row justify-center items-start text-center" style="column-gap: 80px;">
+
+        <!-- Taobao -->
+        <a href="{{ .Page.Params.taobao_url | default " #" }}" target="_blank" class="flex flex-col items-center group">
+            <div class="w-[150px] h-[150px] mb-2">
+                <!-- Placeholder for Taobao Logo -->
+                <img src="/Dental-implants/img/Taobao.png" alt="Taobao" class="w-full h-full object-contain"
+                    style="width: 150px; height: 150px; object-fit: contain;" />
+            </div>
+            <span class="font-semibold group-hover:text-orange-500">淘寶購買 <br><small
+                    class="font-normal text-xs text-base-content/60">Taobao</small></span>
+        </a>
+
+        <!-- Shopee -->
+        <a href="{{ .Page.Params.shopee_url | default " #" }}" target="_blank" class="flex flex-col items-center group">
+            <div class="w-[150px] h-[150px] mb-2">
+                <!-- Placeholder for Shopee Logo -->
+                <img src="/Dental-implants/img/Shopee.png" alt="Shopee" class="w-full h-full object-contain"
+                    style="width: 150px; height: 150px; object-fit: contain;" />
+            </div>
+            <span class="font-semibold group-hover:text-orange-600">蝦皮購買 <br><small
+                    class="font-normal text-xs text-base-content/60">Shopee</small></span>
+        </a>
+
+        <!-- WeChat -->
+        <div class="flex flex-col items-center cursor-pointer"
+            onclick="document.getElementById('wechat_modal').showModal()">
+            <div class="w-[150px] h-[150px] mb-2">
+                <!-- Placeholder for WeChat Logo/Icon -->
+                <img src="/Dental-implants/img/wechat-qr.jpg" alt="WeChat" class="w-full h-full object-contain"
+                    style="width: 150px; height: 150px; object-fit: contain;" />
+            </div>
+            <span class="font-semibold">微信諮詢 <br><small
+                    class="font-normal text-xs text-base-content/60">WeChat</small></span>
+        </div>
+
+    </div>
+
+    <!-- WeChat Modal -->
+    <dialog id="wechat_modal" class="modal">
+        <div class="modal-box text-center">
+            <h3 class="font-bold text-lg mb-4">微信掃碼諮詢 <br><small class="font-normal text-sm">Scan QR Code to Add
+                    WeChat</small></h3>
+            <div class="flex justify-center">
+                <!-- Placeholder for actual QR code -->
+                <img src="/Dental-implants/img/wechat-qr.jpg" alt="WeChat QR Code"
+                    class="w-64 h-64 object-contain border rounded-lg" />
+            </div>
+            <p class="py-4 text-sm text-base-content/60">請使用微信掃描上方二維碼</p>
+            <div class="modal-action">
+                <form method="dialog">
+                    <button class="btn">關閉 (Close)</button>
+                </form>
+            </div>
+        </div>
+        <form method="dialog" class="modal-backdrop">
+            <button></button>
+        </form>
+    </dialog>
+</div>
