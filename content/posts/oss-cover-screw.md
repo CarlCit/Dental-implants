@@ -7,7 +7,7 @@ description: "在植體植入後、組織癒合期間保護植體內部的連接
 cover: "img/oss-cover-screw-01.JPG"
 categories: ["奧齒泰 Osstem"]
 tags: ["覆蓋螺絲","Cover Screw"]
-weight: 2
+weight: 1
 price: 1.2
 original_price: 3
 taobao_url: ""

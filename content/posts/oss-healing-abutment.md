@@ -5,7 +5,7 @@ description: "引導牙齦組織癒合並塑形。"
 cover: "img/oss-healing-abutment.jpg"
 categories: ["奧齒泰 Osstem"]
 tags: ["癒合基台", "Healing Abutment"]
-weight: 3
+weight: 20
 price: 1.5
 original_price: 3
 author: "奧齒泰 Osstem"

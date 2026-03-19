@@ -5,7 +5,7 @@ description: "它能幫助病患在正式全瓷冠完成前，先恢復美觀與
 cover: "img/oss-temporary-abutment.jpg"
 categories: ["奧齒泰 Osstem"]
 tags: ["臨時基台", "Temporary Abutment"]
-weight: 5
+weight: 7
 price: 2
 original_price: 6
 author: "奧齒泰 Osstem"

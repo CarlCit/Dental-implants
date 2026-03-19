@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Dental Implants 種植牙配件</title>
-    <link>http://localhost:56004/Dental-implants/search/</link>
+    <link>http://localhost:50228/Dental-implants/search/</link>
     <description>Recent content on Dental Implants 種植牙配件</description>
     <generator>Hugo</generator>
     <language>zh-tw</language>
-    <atom:link href="http://localhost:56004/Dental-implants/search/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:50228/Dental-implants/search/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
